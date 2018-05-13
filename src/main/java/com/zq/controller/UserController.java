@@ -53,7 +53,7 @@ public class UserController {
 			model.addAttribute("user can not in use");
 			System.out.println("can not get user");
 		}
-	      	return "indexuser";
+	      	return "success";
 	}
 	
 	
@@ -68,7 +68,6 @@ public class UserController {
 		String password2=request.getParameter("password");
 		userRegister.setUsername(username2);
 		userRegister.setPassword(password2);
-		System.out.println(username2+"瀵嗙爜鏄�"+password2);
 		
 		if(userRegister.getUsername()!=null){
 			if (request.getParameter("age")==null) {
@@ -76,13 +75,11 @@ public class UserController {
 			}else{
 				userRegister.setAge(Integer.parseInt(request.getParameter("age")));
 			}
-			System.out.println(userRegister.getUsername()+" 鏄剧ず娉ㄥ唽鐨勫悕瀛�");
 			
 		}else{
-			
 			User user2 = new User();  
-			user2.setUsername("pm");  
-			user2.setPassword("pm");  
+			user2.setUsername("za");  
+			user2.setPassword("za");  
 			user2.setAge(45);  			
 			userRegister=user2;			
 		}
@@ -95,7 +92,7 @@ public class UserController {
         
         model.addAttribute("user", user);
 		
-	    return "indexuser";
+	    return "success";
 	}
 
 	
